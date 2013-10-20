@@ -1,0 +1,28 @@
+{
+  "name": "hubot-hipchat-emoticons",
+  "version": "1.0.0",
+  "author": "Chris Streeter",
+  "description": "Query Hipchat emoticons within Hubot",
+  "keywords": [
+    "hipchat",
+    "hubot",
+    "emoticons",
+    "chat",
+    "bot"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/streeter/hubot-hipchat-emoticons/raw/master/LICENSE"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/streeter/hubot-hipchat-emoticons.git"
+  },
+  "license": "MIT",
+  "main": "./src/emoticons",
+  "dependencies": {
+    "hubot": "~2.6.3"
+  }
+}
