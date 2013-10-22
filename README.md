@@ -30,6 +30,24 @@ hubot emoticon me dude
 ```
 
 
+Installation
+------------
+
+Add the dependency to your hubot `package.json` dependencies:
+
+```json
+"hubot-hipchat-emoticons":  ">=1.0.0",
+```
+
+Then, edit the `external-scripts.json` file and add this line:
+
+```json
+, "hubot-hipchat-emoticons"
+```
+
+Now re-deploy your Hubot with the [configuration](#configuration) and it should now be able to query your Hipchat emoticons.
+
+
 Configuration
 -------------
 
