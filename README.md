@@ -31,6 +31,8 @@ Give me all the emiticons that match `<query>`:
 ```
 hubot emoticon me dude
 -> (yougotitdude)
+hubot emoticon me awesome
+-> (failure) No results found.
 ```
 
 
