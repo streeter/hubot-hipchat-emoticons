@@ -15,12 +15,16 @@ List all the emoticons:
 ```
 hubot emoticons?
 -> (allthethings) (android) ...
+hubot what emoticons?
+-> (allthethings) (android) ...
 ```
 
 Give me a random emoticon:
 ```
 hubot emoticon me
 -> (dealwithit)
+hubot random emoticon
+-> (sadpanda)
 ```
 
 Give me all the emiticons that match `<query>`:

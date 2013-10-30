@@ -8,7 +8,9 @@
 #
 # Commands:
 #   hubot emoticons?
+#   hubot what emoticons?
 #   hubot emoticon me
+#   hubot random emoticon
 #   hubot emoticon me <query>
 #
 # Author:
@@ -66,10 +68,10 @@ searchEmoticons = (robot, msg, query) ->
 
 
 module.exports = (robot) ->
-  robot.respond /emoticons\??/i, (msg) ->
+  robot.respond /(what )?emoticons\??/i, (msg) ->
     allEmoticons robot, msg
 
-  robot.respond /emoticon me$/i, (msg) ->
+  robot.respond /(random emoticon)|(emoticon me)$/i, (msg) ->
     randomEmoticon robot, msg
 
   robot.respond /emoticon me (.*)$/i, (msg) ->
