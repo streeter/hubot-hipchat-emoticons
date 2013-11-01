@@ -64,7 +64,7 @@ searchEmoticons = (robot, msg, query) ->
       combined = filtered.join ") ("
       msg.send "(#{combined})"
     else
-      msg.send "(failure) No results found."
+      msg.send "(failed) No results found."
 
 
 module.exports = (robot) ->
