@@ -7,6 +7,8 @@ Uses the new [v2 API](https://www.hipchat.com/docs/apiv2)
 [get_all_emoticons](https://www.hipchat.com/docs/apiv2/method/get_all_emoticons) method on
 your account.
 
+[![NPM](https://nodei.co/npm/hubot-hipchat-emoticons.png)](https://nodei.co/npm/hubot-hipchat-emoticons/)
+
 
 Commands
 --------
