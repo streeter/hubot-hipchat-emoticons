@@ -35,6 +35,10 @@ fetchEmoticons = (robot, msg, cb, results, url) ->
 
       results ?= []
       result = JSON.parse body
+      if not result
+          cb results
+          return
+
       for r in result.items
         results.push r.shortcut
       next = result.links.next
