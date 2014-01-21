@@ -63,7 +63,7 @@ searchEmoticons = (robot, msg, query) ->
     query = query.toLowerCase()
     re = new RegExp query
     filtered = (x for x in results when re.test x)
-    if filtered.length
+    if filtered and filtered.length
       combined = filtered.join ") ("
       msg.send "(#{combined})"
     else
