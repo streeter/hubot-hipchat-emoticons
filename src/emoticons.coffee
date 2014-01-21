@@ -1,6 +1,9 @@
 # Description:
 #   Return all the emoticons accessible on your Hipchat account.
 #
+# Dependencies:
+#   None
+#
 # Configuration:
 #   HUBOT_HIPCHAT_AUTH_TOKEN
 #
