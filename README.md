@@ -21,6 +21,14 @@ hubot what emoticons?
 -> (allthethings) (android) ...
 ```
 
+List all the group emoticons:
+```
+hubot group emoticons?
+-> (custom) ...
+hubot what group emoticons?
+-> (custom) ...
+```
+
 Give me a random emoticon:
 ```
 hubot emoticon me
@@ -29,7 +37,15 @@ hubot random emoticon
 -> (sadpanda)
 ```
 
-Give me all the emiticons that match `<query>`:
+Give me a random group emoticon:
+```
+hubot group emoticon me
+-> (custom)
+hubot random group emoticon
+-> (custom)
+```
+
+Give me all the emoticons that match `<query>`:
 ```
 hubot emoticon me dude
 -> (yougotitdude)
@@ -37,6 +53,13 @@ hubot emoticon me awesome
 -> (failed) No results found.
 ```
 
+Give me all the group emoticons that match `<query>`:
+```
+hubot group emoticon me cust
+-> (custom)
+hubot group emoticon me awesome
+-> (failed) No results found.
+```
 
 Installation
 ------------
