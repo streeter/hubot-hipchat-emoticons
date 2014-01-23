@@ -67,7 +67,7 @@ Installation
 Add the dependency to your hubot `package.json` dependencies:
 
 ```json
-, "hubot-hipchat-emoticons":  ">=1.0.1"
+, "hubot-hipchat-emoticons":  ">=1.2.0"
 ```
 
 Then, edit the `external-scripts.json` file and add this line:
