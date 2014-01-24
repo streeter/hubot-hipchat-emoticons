@@ -85,9 +85,16 @@ Configuration
 You'll need to have an [auth token](https://hipchat.com/account/api) created. Then set the
 environment variable `HUBOT_HIPCHAT_AUTH_TOKEN` to that auth token.
 
+Authors
+---------
+
+See [contributors][contributors] on GitHub.
+
 
 License
 -------
 
 MIT
 
+
+[contributors]: https://github.com/streeter/hubot-hipchat-emoticons/graphs/contributors
