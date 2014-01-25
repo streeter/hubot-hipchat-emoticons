@@ -24,7 +24,7 @@ auth_token = process.env.HUBOT_HIPCHAT_AUTH_TOKEN
 
 
 fetchEmoticons = (robot, msg, type, cb, results, url) ->
-
+  # Fetch emoticons from the Hipchat API
   url ?= "https://api.hipchat.com/v2/emoticon"
   robot.http(url)
     .query({auth_token: "#{auth_token}", type: (type ? 'all').trim()})
@@ -36,28 +36,32 @@ fetchEmoticons = (robot, msg, type, cb, results, url) ->
       results ?= []
       result = JSON.parse body
       if result? and result.items?.length
-          for r in result.items
-            results.push r.shortcut
-          next = result.links.next
-          if next
-            fetchEmoticons robot, msg, type, cb, results, next
-            return
+        for r in result.items
+          results.push r.shortcut
+        next = result.links.next
+        if next
+          fetchEmoticons robot, msg, type, cb, results, next
+          return
       cb results
 
 
-allEmoticons = (robot, msg, type) ->
+allEmoticons = (robot, msg, type, raw) ->
   # Fetch and print all the emoticons
   fetchEmoticons robot, msg, type, (results) ->
-    results = results.join ") ("
-    msg.send("(#{results})")
+    results = results.join(if raw? then " " else ") (")
+    if not raw?
+      results = "(#{results})"
+    msg.send results
 
-randomEmoticon = (robot, msg, type) ->
+
+randomEmoticon = (robot, msg, type, raw) ->
   fetchEmoticons robot, msg, type, (results) ->
     # Pick a random result
     single = msg.random results
-    msg.send("(#{single})")
+    msg.send(if raw? then single else "(#{single})")
 
-searchEmoticons = (robot, msg, type, query) ->
+
+searchEmoticons = (robot, msg, type, query, raw) ->
   # Fetch and print all the emoticons that match query
   fetchEmoticons robot, msg, type, (results) ->
     # Filter all the results that match query
@@ -65,22 +69,23 @@ searchEmoticons = (robot, msg, type, query) ->
     re = new RegExp query
     filtered = (x for x in results when re.test x)
     if filtered and filtered.length
-      combined = filtered.join ") ("
-      msg.send "(#{combined})"
+      combined = filtered.join(if raw? then " " else ") (")
+      msg.send(if raw? then combined else "(#{combined})")
     else
       msg.send "(failed) No results found."
 
+
 module.exports = (robot) ->
-  robot.respond /(what )?(global |group )?emoticons\??/i, (msg) ->
-    allEmoticons robot, msg, msg.match[2]
+  robot.respond /(what )?(global |group )?(raw )?emoticons\??/i, (msg) ->
+    allEmoticons robot, msg, msg.match[2], msg.match[3]
 
-  robot.respond /random (global |group )?emoticon$/i, (msg) ->
-    randomEmoticon robot, msg, msg.match[1]
+  robot.respond /random (global |group )?(raw )?emoticon$/i, (msg) ->
+    randomEmoticon robot, msg, msg.match[1], msg.match[2]
 
-  robot.respond /(global |group )?emoticon me$/i, (msg) ->
-    randomEmoticon robot, msg, msg.match[1]
+  robot.respond /(global |group )?(raw )?emoticon me$/i, (msg) ->
+    randomEmoticon robot, msg, msg.match[1], msg.match[2]
 
-  robot.respond /(global |group )?emoticon me (.*)$/i, (msg) ->
-    query = msg.match[2]
-    searchEmoticons robot, msg, msg.match[1], query
+  robot.respond /(global |group )?(raw )?emoticon me (.*)$/i, (msg) ->
+    query = msg.match[3]
+    searchEmoticons robot, msg, msg.match[1], query, msg.match[2]
 
