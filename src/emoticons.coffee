@@ -11,10 +11,15 @@
 #
 # Commands:
 #   hubot emoticons?
+#   hubot raw emoticons?
+#   hubot group emoticons?
 #   hubot what emoticons?
 #   hubot emoticon me
-#   hubot random emoticon
+#   hubot raw emoticon me
+#   hubot group emoticon me
 #   hubot emoticon me <query>
+#   hubot raw emoticon me <query>
+#   hubot group emoticon me <query>
 #
 # Author:
 #   Chris Streeter (streeter)
