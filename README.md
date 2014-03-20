@@ -70,7 +70,6 @@ hubot raw emoticon me
 hubot raw emoticon me dude
 -> yougotitdude
 ```
-```
 
 Installation
 ------------
