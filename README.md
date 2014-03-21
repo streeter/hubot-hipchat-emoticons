@@ -59,6 +59,7 @@ hubot group emoticon me cust
 -> (custom)
 hubot group emoticon me awesome
 -> (failed) No results found.
+```
 
 In addition, you can get back unformatted results by prepending any query with `raw`. For example:
 ```
