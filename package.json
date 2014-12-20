@@ -23,6 +23,6 @@
   "license": "MIT",
   "main": "./src/emoticons",
   "dependencies": {
-    "hubot": "~2.6.3"
+    "hubot": ">= 2.10.0"
   }
 }
